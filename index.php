@@ -1,6 +1,6 @@
 <?php
 $input_str = file_get_contents('./inputText.txt', true);//read data from file
-//otsi kahe-ja/või kolmesõnalisi lauseosasid, mis algavad esisuurtähega.
+//match two or three words, while first word starts with the capital letter
 $pattern = '/[A-Z][a-z]+\s[A-Z][a-z]+\s[A-Z][a-z]+|[A-Z][a-z]+\s[A-Z][a-z]+/';
 preg_match_all($pattern, utf8_encode($input_str),$output, PREG_PATTERN_ORDER);
 $names_array = $output[0];
